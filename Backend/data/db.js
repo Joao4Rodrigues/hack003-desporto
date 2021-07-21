@@ -61,9 +61,9 @@ async function getSports() {
     return res;
 }
 
-async function getSport(sport_id) {
+async function getSport(sport) {
     const collection = await getCollection(DB_NAME, "sports")
-    const res = await collection.findOne({_id: mongodb.ObjectId(sport_id)})
+    const res = await collection.findOne({name: sport})
     return res;
 }
 
