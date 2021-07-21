@@ -5,7 +5,7 @@ const saltRounds = 10; */
 const { MongoClient } = mongodb;
 
 const URI = "mongodb://localhost:27017"
-const DB_NAME = "SintraDesporto"
+const DB_NAME = "SintrAtiva"
 let client  
 
 async function connect(uri) {
@@ -55,7 +55,7 @@ async function insertSports(sport) {
     return res.insertId;
 }
 
-async function getSports() {
+async function getSport(sport) {
     const collection = await getCollection(DB_NAME, "sports")
     const res = await collection.find().toArray();
     return res;
