@@ -15,6 +15,7 @@ class Sports extends React.Component {
             <div>
                 <img height='100px'src='/SintrAtiva.png' />
                 <div>
+                    <p>{this.props.sport}</p>
                     <button onClick={this.props.changeComponent} className='homeButton'><AiIcons.AiFillHome className='homepage' /><br />Homepage</button>
 
                 </div>

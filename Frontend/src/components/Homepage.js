@@ -19,12 +19,12 @@ class Homepage extends React.Component {
                 <img height='100px'src='/SintrAtiva.png' />
                 <div className='mainButtons'>
                     <div>
-                        <button onClick={this.props.changeComponent} className='sports'><GiIcons.GiVolleyballBall className='iconVB'/><br />Vóleibol</button>
-                        <button onClick={this.props.changeComponent} className='sports'><IoIcons.IoMdFootball className='iconFB'/><br />Futebol</button>
+                        <button onClick={() => this.props.changeComponent('volley')} className='sports'><GiIcons.GiVolleyballBall className='iconVB'/><br />Vóleibol</button>
+                        <button onClick={() => this.props.changeComponent('football')} className='sports'><IoIcons.IoMdFootball className='iconFB'/><br />Futebol</button>
                     </div>
                     <div>
-                        <button onClick={this.props.changeComponent} className='sports'><GiIcons.GiBasketballBall className='iconBB'/><br />Basquetebol</button>
-                        <button onClick={this.props.changeComponent} className='sports'><IoIcons.IoIosTennisball className='iconTN'/><br />Ténis</button>
+                        <button onClick={() => this.props.changeComponent('basket')} className='sports'><GiIcons.GiBasketballBall className='iconBB'/><br />Basquetebol</button>
+                        <button onClick={() => this.props.changeComponent('tennis')} className='sports'><IoIcons.IoIosTennisball className='iconTN'/><br />Ténis</button>
                     </div>
                 </div>
                 <br />
@@ -32,7 +32,7 @@ class Homepage extends React.Component {
                 <br />
                 <div className='events'>
                     <fieldset style={{width: 3}}>quadrado dos eventos aqui</fieldset>
-                    <button>+ eventos</button>
+                    <button onClick={() => this.props.changeComponent('events')}>+ eventos</button>
                 </div>
                 <br />
                 <br />
