@@ -31,13 +31,8 @@ server.post('/api/user', async (req, res) => {
     res.status(200).json({ user });
 })
 
-server.get('/api/sport/:id', async (req, res) => {
-    const sport_id = await getSport(req.params.id);
-    res.status(200).json({ sport_id });
-})
-
-server.get('/api/sport', async (req, res) => {
-    const sports = await getSports(req.body);
+server.get('/api/sport/:sport', async (req, res) => {
+    const sports = await getSport(req.body);
     res.status(200).json({ sports });
 })
 
