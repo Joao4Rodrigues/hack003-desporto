@@ -57,7 +57,7 @@ async function insertSports(sport) {
 
 async function getSport(sport) {
     const collection = await getCollection(DB_NAME, "sports")
-    const res = await collection.findOne({name: mongodb.ObjectId(sport_id)})
+    const res = await collection.findOne({name: sport})
     return res;
 }
 
@@ -83,7 +83,7 @@ module.exports = {
     insertUser,
     getUser,
     insertSports,
-    getSports,
+    getSport,
     getSport,
     insertComment,
     getComment,

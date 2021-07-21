@@ -1,7 +1,7 @@
 const { 
     insertSports,
     closeConnection
-}
+} = require('./data/db');
 
 const arr = [
     { name: 'Volley', location: ''},
@@ -12,7 +12,7 @@ const arr = [
 
 async function insert() {
     for( const sport of arr) {
-        await insertUser(sport);
+        await insertSports(sport);
     }
     closeConnection();
 }
