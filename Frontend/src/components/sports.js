@@ -13,7 +13,7 @@ class Sports extends React.Component {
     render() {
         return (
             <div>
-                <img height='100px'src='/SintrAtiva.png' />
+                <img height='100px' src='/SintrAtiva.png' />
                 <div>
                     <p>{this.props.sport}</p>
                     <button onClick={this.props.changeComponent} className='homeButton'><AiIcons.AiFillHome className='homepage' /><br />Homepage</button>

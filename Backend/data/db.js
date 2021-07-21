@@ -36,21 +36,63 @@ async function getCollection(dbName, collectionName) {
     return db.collection(collectionName);
 }
 
-async function insereUser(user) {
+async function insertUser(user) {
     const collection = await getCollection(DB_NAME, "users")
     const res = await collection.insertOne(user)
     console.log(user, res)
     return res.insertId;
 }
 
-async function obtemUser(user_id) {
+async function getUser(user_id) {
     const collection = await getCollection(DB_NAME, "users")
     const res = await collection.FindOne({_id: mongodb.ObjectId(user_id)})
-    return res
+    return res;
+}
+
+async function insertSports(sport) {
+    const collection = await getCollection(DB_NAME, "sports")
+    const res = await collection.insertOne(sport)
+    return res.insertId;
+}
+
+async function getSports() {
+    const collection = await getCollection(DB_NAME, "sports")
+    const res = await collection.find().toArray();
+    return res;
+}
+
+async function getSport(sport_id) {
+    const collection = await getCollection(DB_NAME, "sports")
+    const res = await collection.findOne({_id: mongodb.ObjectId(sport_id)})
+    return res;
+}
+
+async function insertComment(comment) {
+    const collection = await getCollection(DB_NAME, "comments")
+    const res = await collection.insertOne(comment)
+    return res.insertId;
+}
+
+async function getComments() {
+    const collection = await getCollection(DB_NAME, "comments")
+    const res = await collection.find().toArray();
+    return res;
+}
+
+async function getComment(comment_id) {
+    const collection = await getCollection(DB_NAME, "comments")
+    const res = await collection.findOne({_id: mongodb.ObjectId(comment_id)})
+    return res;
 }
 
 module.exports = {
-    insereUser,
-    obtemUser,
+    insertUser,
+    getUser,
+    insertSports,
+    getSports,
+    getSport,
+    insertComment,
+    getComment,
+    getComments,
     closeConnection
 }
