@@ -1,17 +1,18 @@
-const { 
+const {
+    insertUser, 
     closeConnection
 } = require('./data/db');
 
 const arr = [
-    { name: ''}
+    { name: 'user1'},    
 ];
 
 async function insert() {
     for( const user of arr) {
-        await insereUser(user);
+        await insertUser(user);
     }
     closeConnection();
 }
 
-insert().then(() => console.log(done));
+insert().then(() => console.log("done"));
 
